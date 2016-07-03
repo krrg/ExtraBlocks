@@ -4,3 +4,6 @@
 .settings/
 *.launch
 build/
+/bin/
+/run/
+.metadata/

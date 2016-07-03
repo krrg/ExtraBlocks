@@ -1,0 +1,11 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+      "type=andesite": [{ "textures": { "all":  "extrablocks:blocks/tfc/bricks/andesite" }}],
+      "type=basalt": [{ "textures": { "all":  "extrablocks:blocks/tfc/bricks/basalt"}}]
+  }
+}
