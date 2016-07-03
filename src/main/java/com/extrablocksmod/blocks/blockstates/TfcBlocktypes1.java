@@ -1,8 +1,10 @@
-package com.extrablocksmod.blocks.tfc;
+package com.extrablocksmod.blocks.blockstates;
+
+import com.extrablocksmod.blocks.IVariantDefinition;
 
 import net.minecraft.util.IStringSerializable;
 
-public enum TfcBlocktypes1 implements IStringSerializable {
+public enum TfcBlocktypes1 implements IStringSerializable, IVariantDefinition {
 	Andesite(0, "andesite"),
 	Basalt(1, "basalt"),
 	Chalk(2, "chalk"),
@@ -20,11 +22,11 @@ public enum TfcBlocktypes1 implements IStringSerializable {
 	Phyllite(14, "phyllite"),
 	Quartzite(15, "quartzite");
 	
-	private final int id;
+	private final int meta;
 	private final String name;
 	
 	private TfcBlocktypes1(int id, String name) {
-		this.id = id;
+		this.meta = id;
 		this.name = name;
 	}
 
@@ -33,13 +35,13 @@ public enum TfcBlocktypes1 implements IStringSerializable {
 		return name;
 	}
 	
-	public int getId() {
-		return id;
+	public int getMeta() {
+		return meta;
 	}
 	
 	public static TfcBlocktypes1 fromMeta(int meta) {
 		for (TfcBlocktypes1 type : TfcBlocktypes1.values()) {
-			if (type.getId() == meta) {
+			if (type.getMeta() == meta) {
 				return type;
 			}
 		}
@@ -47,4 +49,8 @@ public enum TfcBlocktypes1 implements IStringSerializable {
 		throw new IllegalArgumentException("meta cannot be " + meta);
 	}
 
+	@Override
+	public String getVariantName() {
+		return "type";
+	}
 }
