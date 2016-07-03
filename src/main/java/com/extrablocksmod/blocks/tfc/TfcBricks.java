@@ -42,7 +42,7 @@ public class TfcBricks extends Block implements IMetaBlockName{
 	@SideOnly(Side.CLIENT)
     public void initModel() {
 		for (TfcBlocktypes1 type : TfcBlocktypes1.values()) {
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getId(), new ModelResourceLocation(getRegistryName(), type.getName()));
+			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), type.getId(), new ModelResourceLocation(getRegistryName(), "type=" + type.getName()));
 		}
     }
 	

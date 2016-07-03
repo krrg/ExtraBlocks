@@ -4,21 +4,21 @@ import net.minecraft.util.IStringSerializable;
 
 public enum TfcBlocktypes1 implements IStringSerializable {
 	Andesite(0, "andesite"),
-	Basalt(1, "basalt");
-//	Chalk(2, "chalk"),
-//	Chert(3, "chert"),
-//	Claystone(4, "claystone"),
-//	Conglomerate(5, "conglomerate"),
-//	Dacite(6, "dacite"),
-//	Diorite(7, "diorite"),
-//	Dolomite(8, "dolomite"),
-//	Gneiss(9, "gneiss"),
-//	Granite(10, "granite"),
-//	Limestone(11, "limestone"),
-//	Marble(12, "marble"),
-//	Phyllite(13, "phyllite"),
-//	Quartzite(14, "quartzite"),
-//	Rhyolite(15, "rhyolite");
+	Basalt(1, "basalt"),
+	Chalk(2, "chalk"),
+	Chert(3, "chert"),
+	Claystone(4, "claystone"),
+	Conglomerate(5, "conglomerate"),
+	Dacite(6, "dacite"),
+	Diorite(7, "diorite"),
+	Dolomite(8, "dolomite"),
+	Gabbro(9, "gabbro"),
+	Gneiss(10, "gneiss"),
+	Granite(11, "granite"),
+	Limestone(12, "limestone"),
+	Marble(13, "marble"),
+	Phyllite(14, "phyllite"),
+	Quartzite(15, "quartzite");
 	
 	private final int id;
 	private final String name;
