@@ -1,0 +1,25 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+      "type=andesite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/andesite" }}],
+      "type=basalt": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/basalt"}}],
+      "type=chalk": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/chalk"}}],
+      "type=chert": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/chert"}}],
+      "type=claystone": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/claystone"}}],
+      "type=conglomerate": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/conglomerate"}}],
+      "type=dacite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/dacite"}}],
+      "type=diorite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/diorite"}}],
+      "type=dolomite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/dolomite"}}],
+      "type=gabbro": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/gabbro"}}],
+      "type=gneiss": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/gneiss"}}],
+      "type=granite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/granite"}}],
+      "type=limestone": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/limestone"}}],
+      "type=marble": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/marble"}}],
+      "type=phyllite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/phyllite"}}],
+      "type=quartzite": [{ "textures": { "all":  "extrablocks:blocks/tfc/cobble/quartzite"}}]
+  }
+}

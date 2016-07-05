@@ -1,8 +1,10 @@
 package com.extrablocksmod;
 
 import com.extrablocksmod.blocks.ModBlocks;
+import com.extrablocksmod.integration.ChiselIntegrations;
 import com.extrablocksmod.recipes.ModRecipes;
 
+import net.minecraftforge.fml.common.Loader;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.SidedProxy;
@@ -26,6 +28,11 @@ public class ExtraBlocksMod {
 		proxy.init(event);
 	}
 	
+	@EventHandler
+	public void postInit(FMLPostInitializationEvent event) {
+		proxy.postInit(event);
+	}
+	
 	public static class  CommonProxy {
 		public CommonProxy() {
 		}
@@ -39,7 +46,9 @@ public class ExtraBlocksMod {
 	    }
 
 	    public void postInit(FMLPostInitializationEvent e) {
-
+	    	 if (Loader.isModLoaded("chisel")) {
+	    		 new ChiselIntegrations().integrate();
+	    	 }
 	    }
 	}
 	
