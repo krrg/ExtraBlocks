@@ -7,11 +7,21 @@ buildscript {
             name = "forge"
             url = "http://files.minecraftforge.net/maven"
         }
+        
     }
     dependencies {
         classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
     }
 }
+
+
+repositories {
+	maven {
+        name = "chisel"
+        	url = "http://maven.tterrag.com/"
+    }
+}
+
 apply plugin: 'net.minecraftforge.gradle.forge'
 
 ext.configFile = file('build.properties')
@@ -48,6 +58,8 @@ dependencies {
     // or you may define them like so..
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
+    
+    compile "team.chisel:Chisel:MC1.9.4-0.0.5.29"
       
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
