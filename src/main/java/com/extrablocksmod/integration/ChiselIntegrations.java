@@ -20,17 +20,26 @@ public class ChiselIntegrations {
 		
 		ICarvingGroup cobbleGroup = chisel.getGroup(Blocks.COBBLESTONE.getDefaultState());
 		ICarvingGroup stoneGroup = chisel.getGroup(Blocks.STONE.getDefaultState());
+		ICarvingGroup sandGroup = chisel.getGroup(Blocks.SAND.getDefaultState());
+		ICarvingGroup dirtGroup = chisel.getGroup(Blocks.DIRT.getDefaultState());
+		ICarvingGroup gravelGroup = chisel.getGroup(Blocks.GRAVEL.getDefaultState());
 		
 		for (TfcBlocktypes1 type : TfcBlocktypes1.values()) {
 			IBlockState cobblestate = ModBlocks.TfcCobble.getStateFromMeta(type.getMeta());
 			IBlockState brickState = ModBlocks.TfcBricks.getStateFromMeta(type.getMeta());
 			IBlockState smoothState = ModBlocks.TfcSmooth.getStateFromMeta(type.getMeta());
 			IBlockState rawState = ModBlocks.TfcRaw.getStateFromMeta(type.getMeta());
+			IBlockState sandState = ModBlocks.TfcSand.getStateFromMeta(type.getMeta());
+			IBlockState dirtState = ModBlocks.TfcDirt.getStateFromMeta(type.getMeta());
+			IBlockState gravelState = ModBlocks.TfcGravel.getStateFromMeta(type.getMeta());
 			
 			chisel.addVariation(cobbleGroup.getName(), cobblestate, 99);
 			chisel.addVariation(stoneGroup.getName(), brickState, 99);
 			chisel.addVariation(stoneGroup.getName(), smoothState, 99);
 			chisel.addVariation(stoneGroup.getName(), rawState, 99);
+			chisel.addVariation(sandGroup.getName(), sandState, 99);
+			chisel.addVariation(dirtGroup.getName(), dirtState, 99);
+			chisel.addVariation(gravelGroup.getName(), gravelState, 99);
 		}
 		
 		for (TfcBlocktypes2 type : TfcBlocktypes2.values()) {
@@ -38,11 +47,17 @@ public class ChiselIntegrations {
 			IBlockState brickState = ModBlocks.TfcBricks2.getStateFromMeta(type.getMeta());
 			IBlockState smoothState = ModBlocks.TfcSmooth2.getStateFromMeta(type.getMeta());
 			IBlockState rawState = ModBlocks.TfcRaw2.getStateFromMeta(type.getMeta());
+			IBlockState sandState = ModBlocks.TfcSand2.getStateFromMeta(type.getMeta());
+			IBlockState dirtState = ModBlocks.TfcDirt2.getStateFromMeta(type.getMeta());
+			IBlockState gravelState = ModBlocks.TfcGravel2.getStateFromMeta(type.getMeta());
 			
 			chisel.addVariation(cobbleGroup.getName(), cobblestate, 99);
 			chisel.addVariation(stoneGroup.getName(), brickState, 99);
 			chisel.addVariation(stoneGroup.getName(), smoothState, 99);
 			chisel.addVariation(stoneGroup.getName(), rawState, 99);
+			chisel.addVariation(sandGroup.getName(), sandState, 99);
+			chisel.addVariation(dirtGroup.getName(), dirtState, 99);
+			chisel.addVariation(gravelGroup.getName(), gravelState, 99);
 		}
 	}
 }
