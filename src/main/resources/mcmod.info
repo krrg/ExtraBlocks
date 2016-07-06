@@ -1,0 +1,15 @@
+[
+{
+  "modid": "extrablocks",
+  "name": "ExtraBlocks",
+  "description": "Extra blocks for building.",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "updateUrl": "",
+  "authorList": ["vidaj"],
+  "credits": "TerraFirmaCraft for textures",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]
