@@ -1,16 +1,17 @@
 package com.extrablocksmod.blocks.tfc;
 
-import com.extrablocksmod.blocks.AbstractMetaBlock;
+import com.extrablocksmod.blocks.AbstractFallingMetaBlock;
 import com.extrablocksmod.blocks.blockstates.BlockStates;
 import com.extrablocksmod.blocks.blockstates.TfcBlocktypes1;
 
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.PropertyEnum;
 
-public class TfcSand extends AbstractMetaBlock<TfcBlocktypes1> {
+public class TfcSand extends AbstractFallingMetaBlock<TfcBlocktypes1> {
 
 	public TfcSand() {
 		super(Material.ROCK, "tfcsand");
+		setHarvestLevel("shovel", 0);
 	}
 
 	@Override

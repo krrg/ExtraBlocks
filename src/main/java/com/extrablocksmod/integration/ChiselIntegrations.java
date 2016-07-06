@@ -18,11 +18,19 @@ public class ChiselIntegrations {
 			return;
 		}
 		
-		ICarvingGroup cobbleGroup = chisel.getGroup(Blocks.COBBLESTONE.getDefaultState());
-		ICarvingGroup stoneGroup = chisel.getGroup(Blocks.STONE.getDefaultState());
-		ICarvingGroup sandGroup = chisel.getGroup(Blocks.SAND.getDefaultState());
-		ICarvingGroup dirtGroup = chisel.getGroup(Blocks.DIRT.getDefaultState());
-		ICarvingGroup gravelGroup = chisel.getGroup(Blocks.GRAVEL.getDefaultState());
+		
+		ICarvingGroup cobbleGroup = getGroup(chisel, Blocks.COBBLESTONE.getDefaultState());
+		ICarvingGroup stoneGroup = getGroup(chisel, Blocks.STONE.getDefaultState());
+		ICarvingGroup dirtGroup = getGroup(chisel, Blocks.DIRT.getDefaultState());
+		
+		ICarvingGroup sandGroup = CarvingUtils.getDefaultGroupFor(Blocks.SAND.getDefaultState().toString());
+		ICarvingGroup gravelGroup = CarvingUtils.getDefaultGroupFor(Blocks.GRAVEL.getDefaultState().toString());
+		
+		chisel.addGroup(sandGroup);
+		chisel.addGroup(gravelGroup);
+		
+		chisel.addVariation(sandGroup.getName(), Blocks.SAND.getDefaultState(), 1);
+		chisel.addVariation(gravelGroup.getName(), Blocks.GRAVEL.getDefaultState(), 1);
 		
 		for (TfcBlocktypes1 type : TfcBlocktypes1.values()) {
 			IBlockState cobblestate = ModBlocks.TfcCobble.getStateFromMeta(type.getMeta());
@@ -59,5 +67,14 @@ public class ChiselIntegrations {
 			chisel.addVariation(dirtGroup.getName(), dirtState, 99);
 			chisel.addVariation(gravelGroup.getName(), gravelState, 99);
 		}
+	}
+	
+	private ICarvingGroup getGroup(ICarvingRegistry chisel, IBlockState state) {
+		ICarvingGroup group = chisel.getGroup(state);
+		if (group != null) {
+			return group;
+		}
+		
+		return CarvingUtils.getDefaultGroupFor(state.toString());
 	}
 }
