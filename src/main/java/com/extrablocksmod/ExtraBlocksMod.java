@@ -33,7 +33,7 @@ public class ExtraBlocksMod {
 		proxy.postInit(event);
 	}
 	
-	public static class  CommonProxy {
+	public static class CommonProxy {
 		public CommonProxy() {
 		}
 		
@@ -63,5 +63,11 @@ public class ExtraBlocksMod {
 
 	        ModBlocks.initModels();
 	    }
+	}
+	
+	public static class ServerProxy extends CommonProxy {
+		
+		public ServerProxy() {
+		}
 	}
 }
