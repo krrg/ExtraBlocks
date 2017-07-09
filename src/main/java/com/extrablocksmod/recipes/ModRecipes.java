@@ -20,8 +20,8 @@ public class ModRecipes {
 			IBlockState brickState = ModBlocks.TfcBricks.getStateFromMeta(type.getMeta());
 			IBlockState rawState = ModBlocks.TfcRaw.getStateFromMeta(type.getMeta());
 			
-			ItemStack output = new ItemStack(brickState.getBlock(), 1, type.getMeta());
-			
+			ItemStack output = new ItemStack(brickState.getBlock(), 4, type.getMeta());
+
 			GameRegistry.addShapedRecipe(output, "RR", "RR", 'R', new ItemStack(rawState.getBlock(), 1, type.getMeta()));
 		}
 		
@@ -29,7 +29,7 @@ public class ModRecipes {
 			IBlockState brickState = ModBlocks.TfcBricks2.getStateFromMeta(type.getMeta());
 			IBlockState rawState = ModBlocks.TfcRaw2.getStateFromMeta(type.getMeta());
 			
-			ItemStack output = new ItemStack(brickState.getBlock(), 1, type.getMeta());
+			ItemStack output = new ItemStack(brickState.getBlock(),4, type.getMeta());
 			
 			GameRegistry.addShapedRecipe(output, "RR", "RR", 'R', new ItemStack(rawState.getBlock(), 1, type.getMeta()));
 		}

@@ -12,7 +12,7 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 
-@Mod(modid = Constants.ModId, name="extrablocks", version=Constants.Version, dependencies=Constants.Dependencies)
+@Mod(modid = Constants.ModId, name=Constants.ModId, version=Constants.Version, dependencies=Constants.Dependencies)
 public class ExtraBlocksMod {
 	
 	@SidedProxy
