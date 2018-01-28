@@ -17,6 +17,7 @@ import com.extrablocksmod.blocks.tfc.TfcSmooth2;
 
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
+import net.minecraft.item.ItemBlock;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
@@ -101,9 +102,11 @@ public class ModBlocks {
 				TfcGravel2,
 				TfcSand,
 				TfcSand2
-		).stream()
-			.map(block -> new ItemBlockMeta(block))
-			.forEach(item -> event.getRegistry().register(item));
+		).forEach(block-> {
+			ItemBlock itemBlock = new ItemBlock(block);
+			itemBlock.setRegistryName(block.getRegistryName());
+			event.getRegistry().register(itemBlock);
+		});
 	}
 	
 
