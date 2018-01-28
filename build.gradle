@@ -10,7 +10,7 @@ buildscript {
         
     }
     dependencies {
-        classpath 'net.minecraftforge.gradle:ForgeGradle:2.2-SNAPSHOT'
+        classpath 'net.minecraftforge.gradle:ForgeGradle:2.3-SNAPSHOT'
     }
 }
 
@@ -47,7 +47,7 @@ minecraft {
     // stable_#            stables are built at the discretion of the MCP team.
     // Use non-default mappings at your own risk. they may not allways work.
     // simply re-run your setup task after changing the mappings to update your workspace.
-    mappings = "stable_29"
+    mappings = "snapshot_20180126"
     // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
     replace 'GRADLE:VERSION', config.version
     replaceIn 'Constants.java'
@@ -59,7 +59,7 @@ dependencies {
     //compile "some.group:artifact:version:classifier"
     //compile "some.group:artifact:version"
     
-    compile "team.chisel:Chisel:MC1.10.2-0.0.9.15"
+    compile "team.chisel:Chisel:MC1.12-0.1.1.26"
       
     // real examples
     //compile 'com.mod-buildcraft:buildcraft:6.0.8:dev'  // adds buildcraft to the dev env
