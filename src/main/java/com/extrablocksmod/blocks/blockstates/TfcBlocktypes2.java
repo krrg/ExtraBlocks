@@ -9,7 +9,9 @@ public enum TfcBlocktypes2 implements IStringSerializable, IVariantDefinition {
 	RockSalt(1, "rock_salt"),
 	Schist(2, "schist"),
 	Shale(3, "shale"),
-	Slate(4, "slate");
+	Slate(4, "slate"),
+	RedGneiss(5, "redgneiss");
+
 	
 	private final int meta;
 	private final String name;

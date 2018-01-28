@@ -20,6 +20,6 @@
       "type=limestone": [{ "textures": { "all":  "extrablocks:blocks/tfc/smooth/limestone"}}],
       "type=marble": [{ "textures": { "all":  "extrablocks:blocks/tfc/smooth/marble"}}],
       "type=phyllite": [{ "textures": { "all":  "extrablocks:blocks/tfc/smooth/phyllite"}}],
-      "type=quartzite": [{ "textures": { "all":  "extrablocks:blocks/tfc/smooth/quartzite"}}]
+      "type=quartzite": [{ "textures": { "all":  "extrablocks:blocks/tfc/smooth/quartzite"}}],
   }
 }
