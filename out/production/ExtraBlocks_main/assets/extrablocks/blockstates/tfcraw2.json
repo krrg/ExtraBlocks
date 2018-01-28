@@ -1,0 +1,14 @@
+{
+  "forge_marker": 1,
+  "defaults": {
+    "model": "minecraft:cube_all",
+    "transform": "forge:default-block"
+  },
+  "variants": {
+      "type=rhyolite": [{ "textures": { "all":  "extrablocks:blocks/tfc/raw/rhyolite" }}],
+      "type=rock_salt": [{ "textures": { "all":  "extrablocks:blocks/tfc/raw/rock_salt"}}],
+      "type=schist": [{ "textures": { "all":  "extrablocks:blocks/tfc/raw/schist"}}],
+      "type=shale": [{ "textures": { "all":  "extrablocks:blocks/tfc/raw/shale"}}],
+      "type=slate": [{ "textures": { "all":  "extrablocks:blocks/tfc/raw/slate"}}]
+  }
+}

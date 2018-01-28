@@ -3,6 +3,7 @@ package com.extrablocksmod.blocks;
 import java.util.Collection;
 import java.util.List;
 
+import net.minecraft.block.Block;
 import net.minecraft.block.BlockFalling;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.properties.IProperty;
@@ -15,10 +16,14 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -39,7 +44,11 @@ public abstract class AbstractFallingMetaBlock<T extends Enum<T> & IStringSerial
         setDefaultState(this.blockState.getBaseState().withProperty(getVariantEnum(), getDefaultStateVariant()));
         setRegistryName(registryName);
         setUnlocalizedName("extrablocks:" + registryName);
-        GameRegistry.register(new ItemBlockMeta(this));
+	}
+
+	@SubscribeEvent
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().register(this);
 	}
 	
 	protected abstract T getDefaultStateVariant();
@@ -78,10 +87,17 @@ public abstract class AbstractFallingMetaBlock<T extends Enum<T> & IStringSerial
 	    return getMetaFromState(state);
 	}
 	
+//	@Override
+//	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
+//		for (T variant : variantValues) {
+//			list.add(new ItemStack(itemIn, 1, variant.getMeta()));
+//		}
+//	}
+
 	@Override
-	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
-		for (T variant : variantValues) {
-			list.add(new ItemStack(itemIn, 1, variant.getMeta())); 
+	public void getSubBlocks(CreativeTabs itemIn, NonNullList<ItemStack> items) {
+		for (T variant: variantValues) {
+			items.add(new ItemStack(this, 1, variant.getMeta()));
 		}
 	}
 

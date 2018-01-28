@@ -1,0 +1,15 @@
+[
+{
+  "modid": "extrablocks",
+  "name": "ExtraBlocks Restored",
+  "description": "Extra blocks for building (plus bugfixes)",
+  "version": "${version}",
+  "mcversion": "${mcversion}",
+  "updateUrl": "",
+  "authorList": ["vidaj", "krrg"],
+  "credits": "TerraFirmaCraft for textures",
+  "parent": "extrablocks",
+  "screenshots": [],
+  "dependencies": []
+}
+]

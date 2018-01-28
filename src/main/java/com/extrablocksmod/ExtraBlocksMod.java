@@ -38,7 +38,7 @@ public class ExtraBlocksMod {
 		}
 		
 		public void preInit(FMLPreInitializationEvent e) {
-	        ModBlocks.setup();
+			System.out.println("[EXTRA BLOCKS] Pre Init>>>>>>>>>>>>>>>>>>>>>>>>>>");
 	    }
 
 	    public void init(FMLInitializationEvent e) {

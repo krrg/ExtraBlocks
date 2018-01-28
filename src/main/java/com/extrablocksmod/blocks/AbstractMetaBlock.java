@@ -15,13 +15,19 @@ import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.util.IStringSerializable;
+import net.minecraft.util.NonNullList;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.util.math.RayTraceResult;
 import net.minecraft.world.World;
 import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.ModelLoaderRegistry;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
 
 public abstract class AbstractMetaBlock<T extends Enum<T> & IStringSerializable & IVariantDefinition> extends Block implements IMetaBlockName{
 
@@ -39,7 +45,12 @@ public abstract class AbstractMetaBlock<T extends Enum<T> & IStringSerializable 
         setDefaultState(this.blockState.getBaseState().withProperty(getVariantEnum(), getDefaultStateVariant()));
         setRegistryName(registryName);
         setUnlocalizedName("extrablocks:" + registryName);
-        GameRegistry.register(new ItemBlockMeta(this));
+//        GameRegistry.register(new ItemBlockMeta(this));
+	}
+
+	@SubscribeEvent
+	public void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().register(this);
 	}
 	
 	protected abstract T getDefaultStateVariant();
@@ -51,8 +62,9 @@ public abstract class AbstractMetaBlock<T extends Enum<T> & IStringSerializable 
 	@SideOnly(Side.CLIENT)
     public void initModel() {
 		for (T variant : variantValues) {
-			ModelResourceLocation modelResourceLocation = new ModelResourceLocation(getRegistryName(), variant.getVariantName() + "=" + variant.getName());
-			ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), variant.getMeta(), modelResourceLocation);
+            System.out.println("Here is the model loader trying to load a variant." + variant.getVariantName() + "<<<");
+            ModelResourceLocation modelResourceLocation = new ModelResourceLocation(getRegistryName(), variant.getVariantName() + "=" + variant.getName());
+            ModelLoader.setCustomModelResourceLocation(Item.getItemFromBlock(this), variant.getMeta(), modelResourceLocation);
 		}
     }
 	
@@ -79,9 +91,9 @@ public abstract class AbstractMetaBlock<T extends Enum<T> & IStringSerializable 
 	}
 	
 	@Override
-	public void getSubBlocks(Item itemIn, CreativeTabs tab, List<ItemStack> list) {
+	public void getSubBlocks(CreativeTabs tab, NonNullList<ItemStack> list) {
 		for (T variant : variantValues) {
-			list.add(new ItemStack(itemIn, 1, variant.getMeta())); 
+			list.add(new ItemStack(this, 1, variant.getMeta()));
 		}
 	}
 

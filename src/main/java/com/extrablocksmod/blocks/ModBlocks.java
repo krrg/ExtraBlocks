@@ -15,10 +15,19 @@ import com.extrablocksmod.blocks.tfc.TfcSand2;
 import com.extrablocksmod.blocks.tfc.TfcSmooth;
 import com.extrablocksmod.blocks.tfc.TfcSmooth2;
 
+import net.minecraft.block.Block;
+import net.minecraft.item.Item;
+import net.minecraftforge.event.RegistryEvent;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+import java.util.Arrays;
+import java.util.List;
+
+@Mod.EventBusSubscriber
 public class ModBlocks {
 
 	public static TfcBricks TfcBricks = new TfcBricks();
@@ -36,10 +45,7 @@ public class ModBlocks {
 	public static TfcSand TfcSand = new TfcSand();
 	public static TfcSand2 TfcSand2 = new TfcSand2();
 	
-	public static void setup() {
-		registerBlocks();
-	}
-	
+
 	@SideOnly(Side.CLIENT)
 	public static void initModels() {
 		TfcBricks.initModel();
@@ -57,21 +63,48 @@ public class ModBlocks {
 		TfcSand.initModel();
 		TfcSand2.initModel();
 	}
-	
-	private static void registerBlocks() {
-		GameRegistry.register(TfcBricks);
-		GameRegistry.register(TfcBricks2);
-		GameRegistry.register(TfcCobble);
-		GameRegistry.register(TfcCobble2);
-		GameRegistry.register(TfcRaw);
-		GameRegistry.register(TfcRaw2);
-		GameRegistry.register(TfcSmooth);
-		GameRegistry.register(TfcSmooth2);
-		GameRegistry.register(TfcDirt);
-		GameRegistry.register(TfcDirt2);
-		GameRegistry.register(TfcGravel);
-		GameRegistry.register(TfcGravel2);
-		GameRegistry.register(TfcSand);
-		GameRegistry.register(TfcSand2);
+
+	@SubscribeEvent
+	public static void registerBlocks(RegistryEvent.Register<Block> event) {
+		event.getRegistry().registerAll(
+				TfcBricks,
+				TfcBricks2,
+				TfcCobble,
+				TfcCobble2,
+				TfcRaw,
+				TfcRaw2,
+				TfcSmooth,
+				TfcSmooth2,
+				TfcDirt,
+				TfcDirt2,
+				TfcGravel,
+				TfcGravel2,
+				TfcSand,
+				TfcSand2
+		);
 	}
+
+	@SubscribeEvent
+	public static void registerBlockMetadata(RegistryEvent.Register<Item> event) {
+		Arrays.asList(
+				TfcBricks,
+				TfcBricks2,
+				TfcCobble,
+				TfcCobble2,
+				TfcRaw,
+				TfcRaw2,
+				TfcSmooth,
+				TfcSmooth2,
+				TfcDirt,
+				TfcDirt2,
+				TfcGravel,
+				TfcGravel2,
+				TfcSand,
+				TfcSand2
+		).stream()
+			.map(block -> new ItemBlockMeta(block))
+			.forEach(item -> event.getRegistry().register(item));
+	}
+	
+
 }

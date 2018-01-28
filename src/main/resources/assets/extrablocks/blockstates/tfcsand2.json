@@ -9,6 +9,7 @@
       "type=rock_salt": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/rock_salt"}}],
       "type=schist": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/schist"}}],
       "type=shale": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/shale"}}],
-      "type=slate": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/slate"}}]
+      "type=slate": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/slate"}}],
+      "type=redgneiss": [{ "textures": { "all":  "extrablocks:blocks/tfc/sand/redgneiss"}}]
   }
 }
